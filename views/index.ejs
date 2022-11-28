@@ -1,9 +1,28 @@
 <%- include('partials/header') -%>
 
 <main class="container">
+    <div class="row mt-5">
+        <div class="col-6">
+            <div class="mt-5">
+                <h2>Add Order</h2>
+                <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                    <button type="button" class="btn btn-outline-primary" value="4" name="icedCoffee">Iced Coffee</button>
+                    <button type="button" class="btn btn-outline-primary" value="4" name="hotCoffee">Hot Coffee</button>
+                    <button type="button" class="btn btn-outline-primary" value="6" name="latte">Latte</button>
+                    <button type="button" class="btn btn-outline-primary" value="3" name="tea">Tea</button>
+                    <ul>
+                        <li>Item added to order</li>
+                    </ul>
+                    <label for="title" class="form-label mt-4">Customer Name: </label>
+                    <input type="text" class="form-control mb-2" id="title" name="title">
+                    <button type="submit" class="btn btn-primary w-100" value="Upload">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+        <a href="/login" class="col-3 btn btn-primary"> Barista Log In</a>
+        <a href="/signup" class="col-3 btn btn-primary"> Add New Barista</a>
     </div>
 </main>
     
