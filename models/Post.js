@@ -6,13 +6,13 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   caption: {
-    type: String,
+    type: Array,
     required: true,
   },
-  // likes: {
-  //   type: Number,
-  //   required: true,
-  // },
+  likes: {
+    type: Boolean,
+    required: true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

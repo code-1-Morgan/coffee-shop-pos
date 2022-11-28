@@ -1,15 +1,20 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="container border border-4 border-primary w-75 pb-4">
+  <div class="container border border-4 border-primary mt-5 w-75 pb-4">
     <div class="row justify-content-center mt-5">
-      <div class="col-6">
+      <div class="col-12 text-center">
         <h2>Order #<%= post._id %></h2>
         <span class="fs-4">Ordered by: <strong><%= post.title %></strong></span>
-        <p class="display-6 mt-4 text-warning"><%= post.caption %></p>
+        <ul class="list-unstyled">
+        <% for(var j=0; j<post.caption.length; j++) {%>
+          <li class="mb-2 display-6">-<u><%= post.caption[j]%></u></li>
+        <% } %>
+        </ul>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-6">
+        <div class="row text-center">
         <form
           class="col"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -21,19 +26,31 @@
             </svg> Mark Complete
           </button>
         </form>
-        <!-- <h3 class="col-3">Likes: <%= post.likes %></h3> -->
+
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col"
         >
-          <button class="btn btn-secondary p-3 mt-2" type="submit">
+          <button class="btn btn-secondary p-3 mt-4" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
             </svg> Cancel Order
           </button>
         </form>
+        <%}%>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center mt-5">
+      <div class="col-8">
+        <% if(post.likes === true) {%>
+          <h3 class="bg-success display-6"><b>Complete</b></h3>
+        <%}%>
+    
+        <% if(post.likes === false) {%>
+          <h3 class="bg-danger display-6"><b>Incomplete</b></h3>
         <%}%>
       </div>
     </div>

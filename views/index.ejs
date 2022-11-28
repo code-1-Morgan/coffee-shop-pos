@@ -6,13 +6,32 @@
             <div class="mt-5">
                 <h2>Add Order</h2>
                 <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-                    <button type="button" class="btn btn-outline-primary" value="4" name="icedCoffee">Iced Coffee</button>
-                    <button type="button" class="btn btn-outline-primary" value="4" name="hotCoffee">Hot Coffee</button>
-                    <button type="button" class="btn btn-outline-primary" value="6" name="latte">Latte</button>
-                    <button type="button" class="btn btn-outline-primary" value="3" name="tea">Tea</button>
-                    <ul>
-                        <li>Item added to order</li>
-                    </ul>
+                    <fieldset>
+                        <input type="checkbox" class="btn-check" value="Hot Coffee" id="hotCoffee" name="caption" autocomplete="off">
+                        <label for="hotCoffee" class="btn btn-outline-primary mb-2">Hot Coffee</label>
+
+                        <input type="checkbox" class="btn-check" value="Iced Coffee" id="icedCoffee" name="caption" autocomplete="off">
+                        <label for="icedCoffee" class="btn btn-outline-primary mb-2">Iced Coffee</label><br>
+
+                        <input type="checkbox" class="btn-check" value="Hot Latte" id="hotLatte" name="caption" autocomplete="off">
+                        <label for="hotLatte" class="btn btn-outline-primary mb-2">Hot Latte</label>
+
+                        <input type="checkbox" class="btn-check" value="Iced Latte" id="icedLatte" name="caption" autocomplete="off">
+                        <label for="icedLatte" class="btn btn-outline-primary mb-2">Iced Latte</label><br>
+
+                        <input type="checkbox" class="btn-check" value="Hot Tea" id="hotTea" name="caption" autocomplete="off">
+                        <label for="hotTea" class="btn btn-outline-primary mb-2">Hot Tea</label>
+
+                        <input type="checkbox" class="btn-check" value="Iced Tea" id="icedTea" name="caption" autocomplete="off">
+                        <label for="icedTea" class="btn btn-outline-primary mb-2">Iced Tea</label><br>
+
+                        <input type="checkbox" class="btn-check" value="Hot Americano" id="hotAmericano" name="caption" autocomplete="off">
+                        <label for="hotAmericano" class="btn btn-outline-primary">Hot Americano</label>
+
+                        <input type="checkbox" class="btn-check" value="Iced Americano" id="icedAmericano" name="caption" autocomplete="off">
+                        <label for="icedAmericano" class="btn btn-outline-primary">Iced Americano</label>
+                    </fieldset>
+
                     <label for="title" class="form-label mt-4">Customer Name: </label>
                     <input type="text" class="form-control mb-2" id="title" name="title">
                     <button type="submit" class="btn btn-primary w-100" value="Upload">Submit</button>
@@ -21,8 +40,8 @@
         </div>
     </div>
     <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Barista Log In</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Add New Barista</a>
+        <a href="/login" class="col-3 mt-5 btn btn-primary"> Barista Log In</a>
+        <a href="/signup" class="col-3 mt-5 btn btn-primary"> Add New Barista</a>
     </div>
 </main>
     
